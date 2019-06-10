@@ -1,0 +1,11 @@
+server:
+  port: 8081
+feign:
+  client:
+    config:
+      producer:
+        connectTimeout: 5000
+        readTimeout: 3000
+ribbon:
+  eager-load:
+    enabled: true
