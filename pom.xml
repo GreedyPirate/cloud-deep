@@ -23,6 +23,9 @@
     <modules>
         <module>feign</module>
         <module>web-mvc</module>
+        <module>ribbon</module>
+        <module>producer</module>
+        <module>consumer</module>
     </modules>
 
     <dependencies>

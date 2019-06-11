@@ -9,3 +9,4 @@ feign:
 ribbon:
   eager-load:
     enabled: true
+debug: true

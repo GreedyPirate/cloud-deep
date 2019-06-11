@@ -30,6 +30,12 @@
 
 		<dependency>
 			<groupId>com.jay</groupId>
+			<artifactId>feign</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jay</groupId>
 			<artifactId>ribbon</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
