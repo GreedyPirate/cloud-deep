@@ -10,3 +10,8 @@ ribbon:
   eager-load:
     enabled: true
 debug: true
+persistence-ribbon:
+  enable: false
+producer:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.jay.ribbon.PersistenceRule
