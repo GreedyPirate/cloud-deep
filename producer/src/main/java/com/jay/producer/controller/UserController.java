@@ -18,7 +18,7 @@ public class UserController {
     @PostMapping("info")
     public User getInfo(@RequestBody UserInfoRequest request) {
         if (request.getUserId() == 1L) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("错误的参数");
         }
         return User.of(request.getUserId(), "jay");
     }
