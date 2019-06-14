@@ -3,19 +3,15 @@ package com.jay.ribbon;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.ILoadBalancer;
-import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.Server;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.sql.Connection;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class PersistenceRule extends AbstractLoadBalancerRule implements InitializingBean {
-
-    private IClientConfig iClientConfig;
 
     @Value("${ribbon.eager-load.enabled:true}")
     private boolean eager;
@@ -30,7 +26,6 @@ public class PersistenceRule extends AbstractLoadBalancerRule implements Initial
 
     @Override
     public void initWithNiwsConfig(IClientConfig iClientConfig) {
-        this.iClientConfig = iClientConfig;
     }
 
     @Override
