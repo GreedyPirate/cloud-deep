@@ -1,4 +1,4 @@
-package com.jay.ribbon;
+package com.jay.ribbon.rule;
 
 import lombok.Data;
 

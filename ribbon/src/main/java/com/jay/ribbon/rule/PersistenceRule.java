@@ -1,9 +1,12 @@
-package com.jay.ribbon;
+package com.jay.ribbon.rule;
 
+import com.jay.ribbon.OverridedRibbonProperties;
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
 import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.Server;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -11,6 +14,8 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+@NoArgsConstructor
+@Slf4j
 public class PersistenceRule extends AbstractLoadBalancerRule implements InitializingBean {
 
     @Value("${ribbon.eager-load.enabled:true}")
@@ -18,9 +23,9 @@ public class PersistenceRule extends AbstractLoadBalancerRule implements Initial
 
     private ConcurrentMap<String, InstanceInfo> cache = new ConcurrentHashMap<>();
 
-    private PersistenceRibbonProperties properties;
+    private OverridedRibbonProperties properties;
 
-    public PersistenceRule(PersistenceRibbonProperties properties) {
+    public PersistenceRule(OverridedRibbonProperties properties) {
         this.properties = properties;
     }
 

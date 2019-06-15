@@ -9,9 +9,10 @@ feign:
 ribbon:
   eager-load:
     enabled: true
-debug: true
-persistence-ribbon:
-  enable: false
+
 producer:
   ribbon:
-    NFLoadBalancerRuleClassName: com.jay.ribbon.PersistenceRule
+    listOfServices: http://localhost:8082, http://localhost:8083
+
+persistence-ribbon:
+  enable: true

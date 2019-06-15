@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name = "producer", url = "localhost:8080", path = "user")
+@FeignClient(name = "producer", path = "user")
 public interface ProducerClient {
 
     @RequestMapping(value = "info", method = RequestMethod.POST)
